@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Ubah banyak PDF menjadi gambar PNG dan unduh sekaligus dalam ZIP. Gratis, aman, dan langsung di browser.">
+  <title>PDF to PNG Extractor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="site-header"><div class="brand"><span class="brand-icon">▣</span><span>PDF<span class="brand-accent">toPNG</span></span></div><span class="header-pill">100% diproses di browser</span></header>
+    <section class="hero">
+      <div class="eyebrow">PDF IMAGE CONVERTER</div>
+      <h1>Ubah PDF jadi PNG.<br><span>Sekaligus, tanpa ribet.</span></h1>
+      <p>Konversi banyak file PDF, otomatis per halaman, lalu download semua gambar dalam satu ZIP.</p>
+    </section>
+    <section class="workspace" aria-label="Konversi PDF ke PNG">
+      <div class="section-head"><h2>1. Pilih file PDF</h2><span id="fileCount">Belum ada file</span></div>
+      <div id="dropZone" class="drop-zone" role="button" tabindex="0" aria-label="Pilih atau jatuhkan file PDF">
+        <div class="upload-icon">↑</div><strong>Tarik & lepas PDF di sini</strong><span>atau <span class="browse">pilih file dari perangkat</span></span><small>Bisa upload beberapa file sekaligus</small>
+        <input id="fileInput" type="file" accept="application/pdf,.pdf" multiple hidden>
+      </div>
+      <div id="fileList" class="file-list" aria-live="polite"></div>
+      <div class="section-head settings-head"><h2>2. Atur kualitas gambar</h2></div>
+      <div class="setting-box"><label for="dpi">Resolusi output <strong id="dpiLabel">300 DPI</strong></label><input id="dpi" type="range" min="150" max="1200" step="50" value="300"><div class="range-label"><span>150 DPI</span><span>1200 DPI</span></div><p>DPI tinggi menghasilkan gambar lebih besar dan membutuhkan RAM lebih banyak. Mulai dengan 150–300 DPI untuk PDF banyak halaman.</p></div>
+      <button id="convertBtn" class="convert-btn" disabled>Konversi PDF ke PNG <span>→</span></button>
+      <div id="progressArea" class="progress-area" hidden role="status" aria-live="polite"><div class="progress-label"><strong id="progressText">Memproses…</strong><span id="progressPct">0%</span></div><div class="progress-track"><div id="progressBar" class="progress-bar"></div></div><p id="progressDetail"></p></div>
+      <div id="resultArea" class="result-area" hidden><div class="result-header"><span class="check">✓</span><div><strong>Konversi selesai!</strong><p id="resultText"></p></div></div><button id="downloadBtn" class="download-btn">⬇ Download ZIP Hasil</button></div>
+      <div id="errorArea" class="error-area" hidden role="alert"></div>
+    </section>
+    <div class="features"><div><strong>🔒 Privat</strong><span>PDF tidak diunggah ke server</span></div><div><strong>⚡ Praktis</strong><span>Banyak file, semua halaman</span></div><div><strong>📦 Satu ZIP</strong><span>Nama file rapi & otomatis</span></div></div>
+    <footer>PDF to PNG Extractor · Berjalan langsung di browser · Gunakan PDF yang berhak Anda proses</footer>
+  </main>
+</body>
+</html>
